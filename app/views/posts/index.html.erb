@@ -1,5 +1,4 @@
 <h1>投稿一覧</h1>
-<p><%= notice %></p>
 <table>
   <tr>
     <th>画像</th>
@@ -10,9 +9,12 @@
     <tr>
       <td><%= image_tag post.image.url %></td>
       <td><%= post.content %></td>
-      <td><%= link_to "詳細を確認する", post_path(post.id) %></td>
-      <td><%= link_to "編集する", edit_post_path(post.id), data: { confirm: "本当に編集していいですか？"} %></td>
-      <td><%= link_to "削除する", post_path(post.id), data: { confirm: "本当に削除していいですか？"}, method: :delete %></td>
+      <td><%= post.user.name %></td>
+      <td>
+        <%= link_to "詳細を確認する", post_path(post.id) %><br>
+        <%= link_to "編集する", edit_post_path(post.id), data: { confirm: "本当に編集していいですか？"} %><br>
+        <%= link_to "削除する", post_path(post.id), data: { confirm: "本当に削除していいですか？"}, method: :delete %>
+      </td>
     </tr>
   <% end %>
 </table>
