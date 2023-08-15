@@ -1,0 +1,19 @@
+<h1>Whisper編集</h1>
+<%= form_with( model: @post, local: true ) do |form| %>
+  <% if @post.errors.any? %>
+    <div id="error_expanation">
+      <h2><%= @post.errors.count %>件のエラーがあります。</h2>
+      <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="post_content">
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+  <br>
+<%= form.submit "変更を確定する" %>
+<% end %>
