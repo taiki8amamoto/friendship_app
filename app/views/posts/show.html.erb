@@ -2,6 +2,10 @@
 <p id="notice"><%= notice %></p>
 <p>画像：<%= image_tag @post.image.url %></p>
 <p>内容：<%= @post.content %></p>
-<%= link_to '編集する', edit_post_path(@post) %>
+<button type="button" class="btn btn-light">
+  <%= link_to '編集する', edit_post_path(@post) %>
+</button>
 <br>
+<button type="button" class="btn btn-light">
 <%= link_to '一覧画面に戻る', posts_path %>
+</button>

@@ -11,12 +11,17 @@
       <td><%= post.content %></td>
       <td><%= post.user.name %></td>
       <td>
-        <%= link_to "詳細を確認する", post_path(post.id) %><br>
-        <%= link_to "編集する", edit_post_path(post.id), data: { confirm: "本当に編集していいですか？"} %><br>
+        <button type="button" class="btn btn-light">
+        <%= link_to "詳細を確認する", post_path(post.id) %>
+        </button><br><br>
+        <button type="button" class="btn btn-light">
+        <%= link_to "編集する", edit_post_path(post.id), data: { confirm: "本当に編集していいですか？"} %>
+        </button><br><br>
+        <button type="button" class="btn btn-light">
         <%= link_to "削除する", post_path(post.id), data: { confirm: "本当に削除していいですか？"}, method: :delete %>
-      </td>
+      </button></td>
     </tr>
   <% end %>
 </table>
 <br>
-<%= link_to '新しく投稿する', new_post_path %>
+<button type="button" class="btn btn-light"><%= link_to '新しく投稿する', new_post_path %></button>

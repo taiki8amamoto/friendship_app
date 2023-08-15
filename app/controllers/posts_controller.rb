@@ -32,6 +32,9 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    unless current_user == @post.user
+      redirect_to posts_path, notice: "他のユーザーの投稿は編集できません！"
+    end
   end
 
   def update
