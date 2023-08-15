@@ -2,8 +2,8 @@
 <%= form_with(model: @post, local: true) do |form| %>
   <p>画像： <%= image_tag(@post.image.url) if @post.image && @post.image.url %>
   <%= form.hidden_field :image_cache %>
-  <%= form.hidden_field :content %>
   <p>内容： <%= @post.content %></p>
+  <%= form.hidden_field :content %>
   <%= form.submit "投稿を確定する" %>
   <%= form.submit "戻る", name: "back" %>
 <% end %>
