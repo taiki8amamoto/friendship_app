@@ -2,11 +2,13 @@
 <p><%= notice %></p>
 <table>
   <tr>
-    <th>投稿</th>
+    <th>画像</th>
+    <th>内容</th>
+    <th>ユーザー</th>
   </tr>
   <% @posts.each do |post| %>
     <tr>
-      <td><%= post.image.url %></td>
+      <td><%= image_tag post.image.url %></td>
       <td><%= post.content %></td>
       <td><%= link_to "詳細を確認する", post_path(post.id) %></td>
       <td><%= link_to "編集する", edit_post_path(post.id), data: { confirm: "本当に編集していいですか？"} %></td>
